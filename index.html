@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blog</title>
+        <style>
+            header {
+                background-color: #000000;
+                color: #FF9100;
+                text-align: center;
+                max-width: 800px; 
+                margin: 0 auto;
+                padding: 16px;
+                border: 2px solid #db1010;
+            }
+            main {
+                background-color: #000000;
+                color: #FF9100;
+                text-align: center;
+                max-width: 800px; 
+                margin: 0 auto;
+                padding: 16px;
+            }
+            
+            /* Estilo para separar cada postagem */
+            article {
+                border-bottom: 1px solid #333333;
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+            }
+            
+            /* Regra para diminuir a imagem mantendo a proporção */
+            main img {
+                max-width: 300px; /* Ajuste para o tamanho desejado */
+                width: 100%;       /* Garante responsividade */
+                height: auto;
+            }
+            
+            /* Regra para garantir o texto centralizado na div */
+            main div {
+                text-align: center;
+            }
+
+            /* --- ESTILOS DO BOTÃO E ANIMAÇÃO --- */
+            button {
+                background-color: #222222;
+                color: #FF9100;
+                border: 1px solid #FF9100;
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: background-color 0.2s;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                background-color: #333333;
+            }
+
+            /* Animação de pulso */
+            @keyframes pulsar {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+                100% { transform: scale(1); }
+            }
+
+            /* Classe ativada via JavaScript */
+            .animar {
+                animation: pulsar 0.3s ease-in-out;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Meu blog tech</h1>
+            <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+        </header>
+
+        <main>
+            <!-- Primeiro Post -->
+            <article>
+                <img src="https://placehold.co/300x200/000000/FF9100?text=Wi-Fi" alt="Imagem de wifi">
+                <div>
+                    <h2>Meu primeiro post</h2>
+                    <p>Por: Miguel Borges</p>
+                    <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                    <button>👍 <span>0</span></button>
+                    <button>👎 <span>0</span></button>
+                </div>
+            </article>
+
+            <!-- Segundo Post (NOVO) -->
+            <article>
+                <img src="https://placehold.co/300x200/000000/FF9100?text=HTML5+%2B+CSS3" alt="Imagem com logo de HTML e CSS">
+                <div>
+                    <h2>Por que aprender HTML e CSS primeiro?</h2>
+                    <p>Por: Miguel Borges</p>
+                    <p>HTML e CSS são a base da Web. O HTML cuida da estrutura do conteúdo e o CSS traz o estilo visual. Aprender essa dupla é o primeiro passo para quem quer criar sites incríveis!</p>
+                    <button>👍 <span>0</span></button>
+                    <button>👎 <span>0</span></button>
+                </div>
+            </article>
+        </main>
+
+        <script>
+            // querySelectorAll pega TODOS os botões da página (inclusive do novo post)
+            const botoes = document.querySelectorAll("button");
+
+            botoes.forEach((botao) => {
+                botao.addEventListener("click", function() {
+                    const contador = botao.querySelector("span");
+                    
+                    let curtidas = parseInt(contador.textContent);
+                    curtidas++;
+                    contador.textContent = curtidas;
+
+                    botao.classList.remove("animar");
+                    void botao.offsetWidth;
+                    botao.classList.add("animar");
+                });
+            });
+        </script>
+    </body>
+</html>
