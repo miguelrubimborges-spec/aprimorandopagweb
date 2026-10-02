@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog Tech</title>
     <style>
-        /* Reset para evitar bordas/espaços extras indesejados */
+        /* Reset para zerar margens e aplicar box-sizing em tudo */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,7 +18,7 @@
             font-family: Arial, sans-serif;
             width: 100%;
             min-height: 100vh;
-            padding: 20px 10px;
+            padding: 20px 12px;
         }
 
         header {
@@ -27,10 +27,21 @@
             text-align: center;
             width: 90%;
             max-width: 800px;
-            margin: 0 auto 20px auto;
-            padding: 20px 16px;
+            margin: 0 auto 24px auto;
+            padding: 24px 20px; /* Garante que o título fique afastado da borda */
             border: 2px solid #db5a10;
             border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            word-wrap: break-word; /* Evita que palavras grandes quebrem o layout em celulares */
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #cccccc;
         }
 
         main {
@@ -40,11 +51,11 @@
             width: 90%;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px 16px;
+            padding: 24px 20px;
             border-radius: 8px;
         }
-
-        /* Estilo para separar cada postagem */
+        
+        /* Separador das postagens */
         article {
             border-bottom: 1px solid #333333;
             padding-bottom: 24px;
@@ -54,8 +65,27 @@
         article:last-child {
             border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
         }
 
+        article h2 {
+            margin: 12px 0 6px 0;
+            font-size: 1.4rem;
+        }
+
+        article p {
+            color: #dddddd;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        article p.autor {
+            color: #888888;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        
         /* Regra para imagens responsivas */
         main img {
             width: 100%;
@@ -65,7 +95,7 @@
             margin-bottom: 12px;
             object-fit: cover;
         }
-
+        
         main div {
             text-align: center;
         }
@@ -103,7 +133,7 @@
 <body>
     <header>
         <h1>Meu Blog Tech</h1>
-        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação.</p>
     </header>
 
     <main>
@@ -112,7 +142,7 @@
             <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Ícone e cabos de rede Wi-Fi">
             <div>
                 <h2>Meu primeiro post</h2>
-                <p>Por: Miguel Borges</p>
+                <p class="autor">Por: Miguel Borges</p>
                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
@@ -124,7 +154,7 @@
             <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Código de programação na tela do computador">
             <div>
                 <h2>Por que aprender HTML e CSS primeiro?</h2>
-                <p>Por: Miguel Borges</p>
+                <p class="autor">Por: Miguel Borges</p>
                 <p>HTML e CSS são a base da Web. O HTML cuida da estrutura do conteúdo e o CSS traz o estilo visual. Aprender essa dupla é o primeiro passo para quem quer criar sites incríveis!</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
@@ -136,7 +166,7 @@
             <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=600&q=80" alt="Logotipo do JavaScript em tela de computador">
             <div>
                 <h2>Dando vida às páginas com JavaScript</h2>
-                <p>Por: Miguel Borges</p>
+                <p class="autor">Por: Miguel Borges</p>
                 <p>Enquanto o HTML estrutura e o CSS estiliza, o JavaScript traz a interatividade para as páginas! Com ele conseguimos criar botões funcionais, animações, contadores de curtidas e manipular o DOM da página.</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
@@ -148,7 +178,7 @@
             <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="Ilustração do logotipo do Git e do GitHub em uma tela">
             <div>
                 <h2>Gerenciando versões com Git e GitHub</h2>
-                <p>Por: Miguel Borges</p>
+                <p class="autor">Por: Miguel Borges</p>
                 <p>Na Alura aprendemos que registrar alterações no código é fundamental. O Git permite criar um histórico do projeto e salvar versões, enquanto o GitHub serve como nossa vitrine para publicar portfólios e colaborar com outros desenvolvedores.</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
@@ -160,8 +190,8 @@
             <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Lógica e matriz de números em verde estilo Matrix">
             <div>
                 <h2>A importância da Lógica de Programação</h2>
-                <p>Por: Miguel Borges</p>
-                <p>Antes de aprender qualquer linguagem, entender variáveis, condicionais (`if/else`), laços de repetição (`for/while`) e funções é essencial para resolver problemas do jeito certo no desenvolvimento de software.</p>
+                <p class="autor">Por: Miguel Borges</p>
+                <p>Antes de aprender qualquer linguagem, entender variáveis, condicionais (if/else), laços de repetição (for/while) e funções é essencial para resolver problemas do jeito certo no desenvolvimento de software.</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
             </div>
