@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog Tech</title>
     <style>
+        /* Reset para evitar bordas/espaços extras indesejados */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px 0;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px 10px;
         }
-        body {
-            max-width: 100vw;
-        }
-        max whi
+
         header {
             background-color: #000000;
             color: #FF9100;
             text-align: center;
-           max-width: 800px;
+            width: 90%;
+            max-width: 800px;
             margin: 0 auto 20px auto;
-            padding: 16px;
+            padding: 20px 16px;
             border: 2px solid #db5a10;
             border-radius: 8px;
         }
@@ -31,12 +37,13 @@
             background-color: #000000;
             color: #FF9100;
             text-align: center;
+            width: 90%;
             max-width: 800px;
             margin: 0 auto;
-            padding: 16px;
+            padding: 20px 16px;
             border-radius: 8px;
         }
-        
+
         /* Estilo para separar cada postagem */
         article {
             border-bottom: 1px solid #333333;
@@ -48,17 +55,17 @@
             border-bottom: none;
             margin-bottom: 0;
         }
-        
-        /* Regra para diminuir a imagem mantendo a proporção */
+
+        /* Regra para imagens responsivas */
         main img {
-            max-width: 300px; /* Ajuste para o tamanho desejado */
-            width: 100%;       /* Garante responsividade */
+            width: 100%;
+            max-width: 400px;
             height: auto;
-            border-radius: 8px; /* Arredondamento suave nas bordas */
+            border-radius: 8px;
             margin-bottom: 12px;
+            object-fit: cover;
         }
-        
-        /* Regra para garantir o texto centralizado na div */
+
         main div {
             text-align: center;
         }
@@ -88,7 +95,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Classe ativada via JavaScript */
         .animar {
             animation: pulsar 0.3s ease-in-out;
         }
@@ -125,7 +131,7 @@
             </div>
         </article>
 
-        <!-- Terceiro Post (Novo) -->
+        <!-- Terceiro Post -->
         <article>
             <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=600&q=80" alt="Logotipo do JavaScript em tela de computador">
             <div>
@@ -137,7 +143,7 @@
             </div>
         </article>
 
-        <!-- Quarto Post (Novo) -->
+        <!-- Quarto Post -->
         <article>
             <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="Ilustração do logotipo do Git e do GitHub em uma tela">
             <div>
@@ -149,7 +155,7 @@
             </div>
         </article>
 
-        <!-- Quinto Post (Novo) -->
+        <!-- Quinto Post -->
         <article>
             <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Lógica e matriz de números em verde estilo Matrix">
             <div>
@@ -162,7 +168,6 @@
         </article>
     </main>
 
-    <!-- O script deve ficar no final do body -->
     <script src="script.js"></script>
 </body>
 </html>
