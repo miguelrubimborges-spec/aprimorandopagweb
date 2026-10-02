@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Blog Tech</title>
     <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px 0;
+        }
+
         header {
             background-color: #000000;
             color: #FF9100;
             text-align: center;
             max-width: 800px; 
-            margin: 0 auto;
+            margin: 0 auto 20px auto;
             padding: 16px;
             border: 2px solid #db1010;
+            border-radius: 8px;
         }
 
         main {
@@ -22,6 +31,7 @@
             max-width: 800px; 
             margin: 0 auto;
             padding: 16px;
+            border-radius: 8px;
         }
         
         /* Estilo para separar cada postagem */
@@ -30,6 +40,11 @@
             padding-bottom: 24px;
             margin-bottom: 24px;
         }
+
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
         
         /* Regra para diminuir a imagem mantendo a proporção */
         main img {
@@ -37,6 +52,7 @@
             width: 100%;       /* Garante responsividade */
             height: auto;
             border-radius: 8px; /* Arredondamento suave nas bordas */
+            margin-bottom: 12px;
         }
         
         /* Regra para garantir o texto centralizado na div */
@@ -53,8 +69,9 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, transform 0.2s;
             margin-top: 10px;
+            margin-right: 5px;
         }
 
         button:hover {
@@ -76,14 +93,14 @@
 </head>
 <body>
     <header>
-        <h1>Meu blog tech</h1>
+        <h1>Meu Blog Tech</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
     </header>
 
     <main>
         <!-- Primeiro Post -->
         <article>
-            <img src="wifi-1371030_1280.jpg" alt="wifi">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Ícone e cabos de rede Wi-Fi">
             <div>
                 <h2>Meu primeiro post</h2>
                 <p>Por: Miguel Borges</p>
@@ -100,6 +117,42 @@
                 <h2>Por que aprender HTML e CSS primeiro?</h2>
                 <p>Por: Miguel Borges</p>
                 <p>HTML e CSS são a base da Web. O HTML cuida da estrutura do conteúdo e o CSS traz o estilo visual. Aprender essa dupla é o primeiro passo para quem quer criar sites incríveis!</p>
+                <button type="button">👍 <span>0</span></button>
+                <button type="button">👎 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Terceiro Post (Novo) -->
+        <article>
+            <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=600&q=80" alt="Logotipo do JavaScript em tela de computador">
+            <div>
+                <h2>Dando vida às páginas com JavaScript</h2>
+                <p>Por: Miguel Borges</p>
+                <p>Enquanto o HTML estrutura e o CSS estiliza, o JavaScript traz a interatividade para as páginas! Com ele conseguimos criar botões funcionais, animações, contadores de curtidas e manipular o DOM da página.</p>
+                <button type="button">👍 <span>0</span></button>
+                <button type="button">👎 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Quarto Post (Novo) -->
+        <article>
+            <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=600&q=80" alt="Ilustração do logotipo do Git e do GitHub em uma tela">
+            <div>
+                <h2>Gerenciando versões com Git e GitHub</h2>
+                <p>Por: Miguel Borges</p>
+                <p>Na Alura aprendemos que registrar alterações no código é fundamental. O Git permite criar um histórico do projeto e salvar versões, enquanto o GitHub serve como nossa vitrine para publicar portfólios e colaborar com outros desenvolvedores.</p>
+                <button type="button">👍 <span>0</span></button>
+                <button type="button">👎 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- Quinto Post (Novo) -->
+        <article>
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Lógica e matriz de números em verde estilo Matrix">
+            <div>
+                <h2>A importância da Lógica de Programação</h2>
+                <p>Por: Miguel Borges</p>
+                <p>Antes de aprender qualquer linguagem, entender variáveis, condicionais (`if/else`), laços de repetição (`for/while`) e funções é essencial para resolver problemas do jeito certo no desenvolvimento de software.</p>
                 <button type="button">👍 <span>0</span></button>
                 <button type="button">👎 <span>0</span></button>
             </div>
